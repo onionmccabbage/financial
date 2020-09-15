@@ -26,6 +26,10 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     // when this component loads, run this call to an Observable method
     this.getDataFromCode()
+    // also call our mock POST service
+    this.myFinService.doPOST([{name:'Ada'}])
+      .subscribe( (r)=>{console.log(r)} )
+
   }
 
 }

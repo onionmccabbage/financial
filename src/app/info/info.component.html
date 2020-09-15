@@ -1,1 +1,8 @@
-<p>info works!</p>
+<article>
+    <h1>{{title}}</h1>
+    <button (click)='simplePOST()'>Simple POST</button><br />
+    <input placeholder="category" [(ngModel)]='whichCategory' /><br />
+    <input placeholder="id" [(ngModel)]='whichId' /><br />
+    <button (click)='simpleGET()'>Simple Get</button><br />
+    <aside>{{result |json}}</aside>
+</article>
