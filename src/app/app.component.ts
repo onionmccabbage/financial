@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'financial';
+  title:string = 'financial';
+  hiddenFlag:boolean = false
+  username:string = ''
+
+  doAgree(){
+    this.title = 'agree'
+    this.hiddenFlag = true
+    this.username = 'has agreed'
+  }
+
 }
