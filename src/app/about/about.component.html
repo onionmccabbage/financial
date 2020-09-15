@@ -1,5 +1,15 @@
 <section>
+    <!-- if error 'cant find ngModel since its not ....' -->
+    <!-- go to app.module and import FormsModule -->
     <input [(ngModel)]='code' placeholder='which stock code' required/>
     <br/>
+    <input [(ngModel)]='num' type="number" min="0" max="10" placeholder="how many records" />
     <p>You chose {{code}}</p>
+    <button (click)='getDataFromCode()'>get data</button>
+    <ul>
+        <!-- use ngFor to iterate over the results -->
+        <li *ngFor="let record of data['price_data']">{{record['date'] |date:'dd-MM-yyyy'}} {{record['price'] |currency:'EUR' }}</li>
+    </ul>
+    <!-- preformated allows us to see debug info -->
+    <pre>{{data['price_data'] |json}}</pre>
 </section>
